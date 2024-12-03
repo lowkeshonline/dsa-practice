@@ -1,19 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void pattern18(int N)
-{
-      for(int i=0;i<N;i++){
-        for(char ch =('A'+N-1)-i;ch<=('A'+N-1);ch++){
-            cout<<ch<<" ";
+//Example - Input (5);
+
+// E 
+// E D 
+// E D C 
+// E D C B 
+// E D C B A 
+
+void alphaTriangle(int n){
+    //Outer loop for the no of lines
+    for(int i = 1; i <= n; i++){
+        //Inner loop for printing the chars
+        //From ('A' + n - 1) == 'E' To ('A' + n -i) == 'A' in decrementing order
+        for(char ch = ('A' + n - 1); ch >= ('A' + n -i); ch--){
+            cout << ch << " ";
         }
-        cout<<endl;
-      }
+        cout << "\n";
+    }
 }
 
-int main()
-{   
-    int N;
-    pattern18(N);
-    return 0;
+int main(){
+    int n;
+    cin >> n;
+    alphaTriangle(n);
 }
