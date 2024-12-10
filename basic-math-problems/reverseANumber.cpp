@@ -1,28 +1,29 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-	// Declare a variable 'n' to
-	// store the input integer.
-	int n;
-	// Prompt the user to enter an
-	// integer and store it in 'n'.
-	cin >> n;
-	// Initialize a variable 'revNum' to
-	// store the reverse of the input integer.
-	int revNum = 0;
-	// Start a while loop to reverse the
-	// digits of the input integer.
-	while(n > 0){
-		// Extract the last digit of
-		// 'n' and store it in 'ld'.
-		int ld = n % 10;
-		// Multiply the current reverse number
-		// by 10 and add the last digit.
-		revNum = (revNum * 10) + ld;
-		// Remove the last digit from 'n'.
-		n = n / 10;
-	}
-	// Print the reversed number.
-	cout << revNum << "\n";
+// Example : Input(32524)
+
+// Output : 42523
+
+
+void reverseANumber(int n){
+    //Initiailizing a variable to store reversed digits
+    int revNum = 0;
+    //iteration until the n value is greater than zero
+    while(n > 0){
+        //Taking the last digit of n and storing in the variable 
+        int lastDigit = n % 10;
+        // Updating reverse num multiplied by 10 and adding the stored last digit gives reversed values
+        revNum = revNum * 10 + lastDigit;
+        //Removing the current reversed last digit from the input value "n"
+        n = n / 10;
+    }
+    //print the final reversed number after all the iterations
+    cout << revNum << "\n";
+}
+
+int main(){
+    int n;
+    cin >> n;
+    reverseANumber(n);
 }
