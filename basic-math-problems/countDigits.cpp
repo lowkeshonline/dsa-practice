@@ -1,36 +1,26 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
+// Example : Input (6068787)
 
-// Function to count the number
-// of digits in an integer 'n'.
-int countDigits(int n){
-    // Initialize a counter variable
-    // 'cnt' to store the count of digits.
-    int cnt = 0;
-    // While loop iterates until 'n'
-    // becomes 0 (no more digits left).
+// Output : 7
+
+void countDigits(int n){
+    //Initializing an counter variable
+    int count = 0;
+    //Iterate until n becomes the value less than or equals to 0
     while(n > 0){
-        // Increment the counter
-        // for each digit encountered.
-        cnt = cnt + 1;
-        // Divide 'n' by 10 to
-        // remove the last digit.
+        // divide the n with 10 and assign it to n so that the last digit can be removed
         n = n / 10;
+        //increment the counter everytime a digit gets removed
+        count++;
     }
-    // Return the
-    // count of digits.
-    return cnt;
+    //print the number of digits removed before the n becomes 0
+    cout << count << "\n";
 }
 
-
-
-int main() {
-    int N = 329823;
-    cout << "N: "<< N << endl;
-    int digits = countDigits(N);
-    cout << "Number of Digits in N: "<< digits << endl;
-    return 0;
+int main(){
+    int n;
+    cin >> n;
+    countDigits(n);
 }
