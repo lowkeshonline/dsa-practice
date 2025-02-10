@@ -14,14 +14,14 @@ int main(){
     
     //Traversing through the string
     for(int i = 0; i < s.size(); i++){
-        arr[s[i]]++;
+        arr[s[i] - 'a']++;
     }
 
     //Output the array
     for(int i = 0; i < 5; i++){
         char c;
         cin >> c;
-        cout << arr[c] << endl;
+        cout << arr[c];
     }
     return 0;
 }
