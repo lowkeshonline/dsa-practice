@@ -4,7 +4,7 @@ using namespace std;
 int main(){
 
     //creating an array
-    int arr[] = {92, 44, 93, 72, 13, 1, 34};
+    int arr[] = {92, 44, 93, 72, 13, 1, 34 , 93};
 
     //storing the length of the array
     int n = sizeof(arr) / sizeof(arr[0]);
@@ -17,7 +17,7 @@ int main(){
 
     //finding the second largest
     int secondLargest = -1;
-    for(int i = n-2; i >= 0; i++){
+    for(int i = n-2; i >= 0; i--){
         if(arr[i] != largest){
             secondLargest = arr[i];
             break;
