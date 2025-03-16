@@ -1,42 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Better Approach
+
 int main(){
 
-    //creating an array
-    int arr[] = {92, 44, 93, 72, 13, 1, 34 , 93};
+    //create an array
+    int arr[] = {39 , 12 , 43, 21 , 90, 11};
 
-    //storing the length of the array
+    //storing size of an array
     int n = sizeof(arr) / sizeof(arr[0]);
 
     //sorting the array
-    sort (arr, arr+n);
-    
-    //finding the largest element
-    int largest = arr[n-1];
+    sort(arr , arr+n);
 
-    //finding the second largest
-    int secondLargest = -1;
-    for(int i = n-2; i >= 0; i--){
-        if(arr[i] != largest){
-            secondLargest = arr[i];
-            break;
+    //finding the largest first
+
+    int largest = arr[0];
+    for(int i = 0; i <= n-1; i++){
+        if(arr[i] > largest){
+            largest = arr[i];
         }
     }
 
-    //Sorted array
-    cout << "Sorted array : ";
-    for(int num : arr){
-        cout << num << " ";
+    //finding the second largest
+    int secondLargest = -1;
+    for(int i = 0; i <= n-1; i++){
+        if(arr[i] > secondLargest){
+            if(arr[i] != largest){
+                secondLargest = arr[i];
+            }
+        }
     }
-    cout << "\n";
-    
-    //Largest and second largest numbers
-    cout << "Largest element : " << largest << "\n";
-    if(secondLargest == -1){
-        cout << "All the elements in array are same";
-    } else {
-        cout << "Second Largest element : " << secondLargest << "\n";
-    }
+
+    cout << secondLargest << " ";    
 
 }
