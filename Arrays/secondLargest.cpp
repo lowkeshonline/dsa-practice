@@ -1,38 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Better Approach
+// Optimal Approach
 
 int main(){
 
     //create an array
-    int arr[] = {39 , 12 , 43, 21 , 90, 11};
+    vector<int> arr = {39 , 12 , 43, 21 , 90, 89, 11};
 
-    //storing size of an array
-    int n = sizeof(arr) / sizeof(arr[0]);
+    if(arr.size() == 1) return -1;
 
-    //sorting the array
-    sort(arr , arr+n);
-
-    //finding the largest first
-
+    //finding the Largest and second largest
     int largest = arr[0];
-    for(int i = 0; i <= n-1; i++){
+    int sLargest = -1;
+
+    for(int i = 1; i < arr.size(); i++){
         if(arr[i] > largest){
+            sLargest = largest;
             largest = arr[i];
+        } else if(arr[i] < largest && arr[i] > sLargest) {
+            sLargest = arr[i];
         }
     }
 
-    //finding the second largest
-    int secondLargest = -1;
-    for(int i = 0; i <= n-1; i++){
-        if(arr[i] > secondLargest){
-            if(arr[i] != largest){
-                secondLargest = arr[i];
-            }
-        }
-    }
+    //Print the second largest
 
-    cout << secondLargest << " ";    
+    cout << sLargest << " ";    
 
 }
